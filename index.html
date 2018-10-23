@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>读特接口测试</title>
+    <script src="mc.js"></script>
+    <style type="text/css">
+        button{
+            width: 30%;
+            height: 35px;
+            font-size: 20px;
+            margin-left: 35%;
+            margin-top: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        alert(mc.isClient())
+    </script>
+</head>
+<body>
+    <button type="button" name="userInfo" onclick="getUserInfo()">获取用户登陆信息</button><br>
+    <button type="button" name="userInfoEncryp" onclick="getUserInfoEncry()">获取加密用户登陆信息</button><br>
+    <button type="button" name="userLogin" onclick="userLogin()">调用用户登陆界面</button><br>
+    <button type="button" name="reLogin" onclick="reLogin()">重新登陆界面</button><br>
+    <button type="button" name="一键分享" onclick="sharePanel()">一键分享</button><br>
+    <button type="button" name="微信朋友分享" onclick="shareWeChat()">微信朋友分享</button><br>
+    <button type="button" name="微信朋友圈分享" onclick="shareTimeline()">微信朋友圈分享</button><br>
+    <button type="button" name="微博分享" onclick="shareWeibo()">微博分享</button><br>
+    <button type="button" name="地理位置信息" onclick="locationGetInfo()">地理位置信息</button><br>
+    <button type="button" name="二维码扫描" onclick="qrcodeScan()">二维码扫描</button>
+    <button type="button" name="是否为客户端" onclick="isClient()">是否为客户端</button>
+
+
+    <script type="text/javascript">
+        function getUserInfo() {
+            mc.userGetInfo(function(data) {
+                alert(JSON.stringify(data));
+            })
+        }
+        function isClient() {
+            alert(mc.isClient())
+        }
+
+    </script>
+</body>
+</html>
