@@ -29,7 +29,10 @@
     <button type="button" name="地理位置信息" onclick="locationGetInfo()">地理位置信息</button><br>
     <button type="button" name="二维码扫描" onclick="qrcodeScan()">二维码扫描</button><br>
     <button type="button" name="是否为客户端" onclick="isClient()">是否为客户端</button><br>
-    <button type="button" name="跳转到思拓的两微" onclick="push2WeiViewController()">跳转到思拓的两微</button>
+    <button type="button" name="跳转到思拓的两微" onclick="push2WeiViewController()">跳转到思拓的两微</button><br>
+    <button type="button" name="获取手机设备信息" onclick="deviceGetInfo()">获取手机设备信息</button><br>
+
+
 
     <script type="text/javascript">
         function getUserInfo() {
@@ -37,8 +40,77 @@
                 alert(JSON.stringify(data));
             })
         }
+        function getUserInfoEncry() {
+            mc.userGetEncryptInfo(function(data) {
+                alert(JSON.stringify(data));
+            })
+        }
+        function userLogin() {
+            mc.userLogin(function(data) {
+                alert(JSON.stringify(data));
+            })
+        }
+        function reLogin() {
+            mc.reLogin(function(data) {
+                alert(JSON.stringify(data));
+            })
+        }
+        function push2WeiViewController() {
+            mc.push2WeiViewController("我是标题")
+        }
+        function sharePanel() {
+            mc.sharePanel({
+                "title": "我是分享标题",
+                "content": "我是分享内容",
+                "image": "http://source.cmstop.com/templates/2013/css/images/logo@2x.png",
+                "url": "http://www.cmstop.com"
+            })
+        }
+        function shareWeChat() {
+            mc.shareWeChat({
+                "title": "我是分享标题",
+                "content": "我是分享内容",
+                "image": "http://source.cmstop.com/templates/2013/css/images/logo@2x.png",
+                "url": "http://www.cmstop.com"
+            })
+        }
+        function shareTimeline() {
+            mc.shareTimeline({
+                "title": "我是分享标题",
+                "content": "我是分享内容",
+                "image": "http://source.cmstop.com/templates/2013/css/images/logo@2x.png",
+                "url": "http://www.cmstop.com"
+            })
+        }
+        function shareWeibo() {
+            mc.shareWeibo({
+                "title": "我是分享标题",
+                "content": "我是分享内容",
+                "image": "http://source.cmstop.com/templates/2013/css/images/logo@2x.png",
+                "url": "http://www.cmstop.com"
+            })
+        }
+        function locationGetInfo() {
+            mc.locationGetInfo(function(data) {
+                alert(JSON.stringify(data));
+            })
+        }
+        function qrcodeScan() {
+            mc.qrcodeScan(function(data) {
+                alert(JSON.stringify(data));
+            })
+        }
+
         function isClient() {
             alert(mc.isClient())
+        }
+        function push2WeiViewController() {
+            mc.push2WeiViewController("我是标题")
+        }
+        function deviceGetInfo() {
+            mc.deviceGetInfo(function(data) {
+                alert(JSON.stringify(data));
+            })
         }
 
     </script>
